@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
+import { useTheme } from 'styled-components';
 import { StackPramsList } from '../../routes/index.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -23,20 +24,18 @@ import {
   IndicatorQuantity,
   TitleQuantity,
   Main,
+
 } from './styles';
 
 export function Home() {
   const navigation = useNavigation<NativeStackNavigationProp<StackPramsList>>();
-  const [visibile, setVisible] = useState(false);
   const { itemsCar, addItemCar } = useProducts();
+  const theme = useTheme();
 
   function handleAddProducts(products: IProducts) {
     addItemCar(products)
-  
 
   }
-
-
 
   function handleMyProducts() {
     navigation.navigate('MyProducts');
@@ -45,12 +44,13 @@ export function Home() {
   return (
     <Container>
       <Header>
-        <Title>Lista de produtos</Title>
+        <Title>Nossos produtos</Title>
 
         <ButtonCloseRequest onPress={handleMyProducts}>
           <Feather
             size={30}
             name="shopping-cart"
+            color={theme.colors.main}
           />
           {itemsCar?.length >= 1 && (
             <IndicatorQuantity>
@@ -58,18 +58,24 @@ export function Home() {
             </IndicatorQuantity>
           )}
         </ButtonCloseRequest>
+
       </Header>
 
       <Main>
         <FlatList
           data={products}
+          numColumns={2}
+          contentContainerStyle={{
+            flexDirection: 'column',
+          }}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-
+              
             <ListProducts
               data={item}
               setProductCar={() => handleAddProducts(item)}
             />
+
 
           )}
         />
