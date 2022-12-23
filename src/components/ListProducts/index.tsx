@@ -18,6 +18,8 @@ interface IProducts {
 }
 
 export function ListProducts({ data, setProductCar }: IProducts) {
+  
+  
   return (
     <Container>
       <Details>

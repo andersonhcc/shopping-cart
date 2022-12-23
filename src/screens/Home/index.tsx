@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
-import { useNavigation, RouteProp } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { StackPramsList } from '../../routes/index.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { useProducts } from '../../context';
 
 
 import { products } from '../../utils/products';
@@ -14,8 +16,10 @@ export interface DataProducts {
   id: string;
   name: string;
   price: number;
-
+  amount?: number;
 }
+
+
 
 import {
   Container,
@@ -31,15 +35,53 @@ export function Home() {
   const navigation = useNavigation<NativeStackNavigationProp<StackPramsList>>();
   const [visibile, setVisible] = useState(false);
   const [data, setData] = useState<DataProducts[]>([]);
-  const [amount, setAmount] = useState(0);
+  const [amountAll, setAmountAll] = useState(0);
+  const [priceAll, setPriceAll] = useState(0);
+  const { itemsCar, setItemsCar } = useProducts();
 
   function handleAddProducts(products: DataProducts) {
-    setVisible(true);
-    setData(prevState => [...prevState, products]);
+    
+    setItemsCar((prevState) => {
+      const newProduct = [...prevState];
+      const productIndex = prevState.findIndex(item => item.id === products.id);
+
+
+
+      if(productIndex < 0){
+        
+        return [...newProduct, {
+          ...products,
+          amount: 1,
+        }]
+        
+      }
+
+      const item = newProduct[productIndex];
+
+      newProduct[productIndex] = {
+        name: item.name,
+        price: item.price,
+        id: item.id,
+        amount: Number(item.amount) + 1,
+      }
+
+      return newProduct;
+    
+    });
+
+    const quantityAll = itemsCar.reduce((acc, carItem) => {
+      return acc + carItem.amount
+    },1)
+
+    setAmountAll(quantityAll)
+    setVisible(true)
+
   }
 
+
+
   function handleMyProducts() {
-    navigation.navigate('MyProducts', { item: data });
+    navigation.navigate('MyProducts');
   }
 
   return (
@@ -55,7 +97,7 @@ export function Home() {
 
           {visibile &&
             <IndicatorQuantity>
-              <TitleQuantity>1</TitleQuantity>
+              <TitleQuantity>{amountAll}</TitleQuantity>
             </IndicatorQuantity>
           }
         </ButtonCloseRequest>

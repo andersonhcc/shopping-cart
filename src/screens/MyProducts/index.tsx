@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 
-import { useRoute } from '@react-navigation/native';
+import { useProducts } from '../../context';
 
 import {
   Container,
@@ -23,32 +23,47 @@ interface Params {
   item: DataProducts[];
 }
 
-
-
 export function MyProducts() {
-  const { params } = useRoute();
-  const { item } = params as Params;
+
+  const { itemsCar, setItemsCar } = useProducts();
+
+
+  function removeProduct(id: string){
+
+    const indexCar = itemsCar.find(item => item.id === id);
+
+    const index = itemsCar.indexOf(item => item === id);
+    if (itemsCar[index].amount) itemsCar[index].amount--
+    setItemsCar([...itemsCar])
+    
+    // let removeItem = itemsCar.filter(item => {
+    //   return (item.id !== id);
+    // })
+
+    // setItemsCar(removeItem);
+
+   }
 
 
   return (
     <Container>
 
       <FlatList
-        data={item}
+        data={itemsCar}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <Main>
             <Details>
               <Title>{item.name}</Title>
               <Price>R${item.price}</Price>
-              <AmountProduct>30</AmountProduct>
+              <AmountProduct>{item.amount}</AmountProduct>
             </Details>
 
             <Buttons>
               <ButtonAdd>
                 <TitleButton>+</TitleButton>
               </ButtonAdd>
-              <ButtonRemove>                
+              <ButtonRemove onPress={() => removeProduct(item.id)}>                
                 <TitleButton>-</TitleButton>
               </ButtonRemove>
             </Buttons>
