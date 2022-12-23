@@ -1,6 +1,8 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 
+import { DataProducts } from '../../screens/Home';
+
 import {
   Container,
   Title,
@@ -9,16 +11,10 @@ import {
   ButtonAddCarProduct,
 } from './styles';
 
-interface DataProducts {
-  id: string;
-  name: string;
-  price: number;
-
-}
 
 interface IProducts {
   data: DataProducts
-  setProductCar:() => void;
+  setProductCar:(value: DataProducts) => void;
 }
 
 export function ListProducts({ data, setProductCar }: IProducts) {
@@ -29,7 +25,7 @@ export function ListProducts({ data, setProductCar }: IProducts) {
       <Price>R$ {data.price}</Price>
       </Details>
 
-      <ButtonAddCarProduct onPress={setProductCar}>
+      <ButtonAddCarProduct onPress={() => setProductCar(data)}>
         <Feather 
           name="plus"
           size={20}
