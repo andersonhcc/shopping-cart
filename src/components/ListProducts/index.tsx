@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 
-import { DataProducts } from '../../screens/Home';
+import { IProducts } from '../../context';
 
 import {
   Container,
@@ -12,12 +12,12 @@ import {
 } from './styles';
 
 
-interface IProducts {
-  data: DataProducts
-  setProductCar:(value: DataProducts) => void;
+interface Props {
+  data: IProducts
+  setProductCar:(value: IProducts) => void;
 }
 
-export function ListProducts({ data, setProductCar }: IProducts) {
+export function ListProducts({ data, setProductCar }: Props) {
   
   
   return (

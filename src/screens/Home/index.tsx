@@ -12,13 +12,7 @@ import { useProducts } from '../../context';
 import { products } from '../../utils/products';
 import { ListProducts } from '../../components/ListProducts';
 
-export interface DataProducts {
-  id: string;
-  name: string;
-  price: number;
-  amount?: number;
-}
-
+import { IProducts } from '../../context';
 
 
 import {
@@ -34,47 +28,11 @@ import {
 export function Home() {
   const navigation = useNavigation<NativeStackNavigationProp<StackPramsList>>();
   const [visibile, setVisible] = useState(false);
-  const [data, setData] = useState<DataProducts[]>([]);
-  const [amountAll, setAmountAll] = useState(0);
-  const [priceAll, setPriceAll] = useState(0);
-  const { itemsCar, setItemsCar } = useProducts();
+  const { itemsCar, addItemCar } = useProducts();
 
-  function handleAddProducts(products: DataProducts) {
-    
-    setItemsCar((prevState) => {
-      const newProduct = [...prevState];
-      const productIndex = prevState.findIndex(item => item.id === products.id);
-
-
-
-      if(productIndex < 0){
-        
-        return [...newProduct, {
-          ...products,
-          amount: 1,
-        }]
-        
-      }
-
-      const item = newProduct[productIndex];
-
-      newProduct[productIndex] = {
-        name: item.name,
-        price: item.price,
-        id: item.id,
-        amount: Number(item.amount) + 1,
-      }
-
-      return newProduct;
-    
-    });
-
-    const quantityAll = itemsCar.reduce((acc, carItem) => {
-      return acc + carItem.amount
-    },1)
-
-    setAmountAll(quantityAll)
-    setVisible(true)
+  function handleAddProducts(products: IProducts) {
+    addItemCar(products)
+  
 
   }
 
@@ -94,12 +52,11 @@ export function Home() {
             size={30}
             name="shopping-cart"
           />
-
-          {visibile &&
+          {itemsCar?.length >= 1 && (
             <IndicatorQuantity>
-              <TitleQuantity>{amountAll}</TitleQuantity>
+              <TitleQuantity>{itemsCar?.length}</TitleQuantity>
             </IndicatorQuantity>
-          }
+          )}
         </ButtonCloseRequest>
       </Header>
 
