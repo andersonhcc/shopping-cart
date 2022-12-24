@@ -80,19 +80,4 @@ export const WrapperPriceAll = styled.View`
   align-items: center;
 `;
 
-export const ButtonFinish = styled.TouchableOpacity`
-  width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  margin-top: 30px;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.background_secondary};
-`;
 
-export const TitleButton = styled.Text`
-  color: ${({ theme }) => theme.colors.background_primary};
-  font-family: ${({ theme }) => theme.fonts.bold};
-  font-size: 17px;
-
-`;

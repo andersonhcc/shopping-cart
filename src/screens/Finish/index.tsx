@@ -1,4 +1,5 @@
 import React from 'react';
+import { Animated } from 'react-native';
 
 import Done from '../../assets/images/Done.svg';
 import { Button } from '../../components/Button';

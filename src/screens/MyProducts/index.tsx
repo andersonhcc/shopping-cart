@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Alert } from 'react-native';
 
 import { AntDesign, SimpleLineIcons } from '@expo/vector-icons';
 
@@ -23,8 +23,6 @@ import {
   LabelPrice,
   LabelDefault,
   WrapperDefault,
-  ButtonFinish,
-  TitleButton,
   Footer,
   WrapperPriceAll,
 } from './styles';
@@ -32,12 +30,43 @@ import {
 
 export function MyProducts() {
 
-  const { itemsCar, addItemCar, removeItem, total } = useProducts();
+  const {
+    itemsCar,
+    addItemCar,
+    removeItem,
+    total,
+    resetCar,
+  } = useProducts();
   const theme = useTheme();
   const navigation = useNavigation<NativeStackNavigationProp<StackPramsList>>();
 
   function handleFinishPage(){
     navigation.navigate('Finish')
+    resetCar();
+  }
+
+  function deleteRequest(){
+    Alert.alert(
+      "Meu carrinho",
+      "Você tem certeza que deseja excluir?",
+      [
+        {
+          text: "Cancelar",
+          onPress: () => { },
+          style: "cancel"
+        },
+  
+        {
+          text: "Excluir",
+          onPress: () => handleDeleteRequest(),
+        }
+      ]
+    )
+  }
+
+  function handleDeleteRequest(){
+    navigation.navigate('Home')
+    resetCar();
   }
 
   return (
@@ -55,7 +84,7 @@ export function MyProducts() {
 
         <Title>Meu carrinho</Title>
 
-        <ButtonDelete>
+        <ButtonDelete onPress={deleteRequest}>
           <SimpleLineIcons
             name="trash"
             size={28}

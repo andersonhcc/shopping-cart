@@ -15,6 +15,7 @@ interface Props {
   addItemCar: (value: IProducts) => void;
   removeItem: (value: IProducts) => void;
   total: number;
+  resetCar: () => void;
 
 }
 
@@ -87,6 +88,12 @@ export const ContextAll = createContext({} as Props);
     setTotal(result);
   }
 
+  function resetCar(){
+    
+    setItemsCar([]);
+    setTotal(0);
+  }
+
   return (
     <ContextAll.Provider value={
       {
@@ -94,6 +101,7 @@ export const ContextAll = createContext({} as Props);
         addItemCar,
         removeItem,
         total,
+        resetCar
       }
     }>
       {children}
