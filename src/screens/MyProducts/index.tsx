@@ -6,8 +6,11 @@ import { AntDesign, SimpleLineIcons } from '@expo/vector-icons';
 import { useProducts } from '../../context';
 import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { StackPramsList } from '../../routes/index.routes';
 
 import { CarItems } from '../../components/CarItems';
+import { Button } from '../../components/Button';
 
 import {
   Container,
@@ -31,7 +34,11 @@ export function MyProducts() {
 
   const { itemsCar, addItemCar, removeItem, total } = useProducts();
   const theme = useTheme();
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<StackPramsList>>();
+
+  function handleFinishPage(){
+    navigation.navigate('Finish')
+  }
 
   return (
     <Container>
@@ -81,9 +88,14 @@ export function MyProducts() {
                 <PriceAll> R${total}</PriceAll>
                 </WrapperPriceAll>
 
-                <ButtonFinish>
-                  <TitleButton>Finalizar</TitleButton>
-                </ButtonFinish>
+                <Button 
+                  title="Finalizar"
+                  style={{ marginTop: 30}}
+                  width={250}
+                  height={50}
+                  backgroundColor={theme.colors.background_secondary}
+                  onPress={handleFinishPage}
+                />
               </Footer>
             }
           </WrapperPrice>
