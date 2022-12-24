@@ -31,7 +31,13 @@ export const Title = styled.Text`
 export const ButtonCloseRequest = styled.TouchableOpacity``;
 
 export const IndicatorQuantity = styled.View`
-  padding: 5px 10px;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 20px;
+  left: 20px;
+  bottom: 0;
+  right: 0;
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.carQuantity};
   justify-content: center;

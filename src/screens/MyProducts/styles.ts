@@ -2,72 +2,70 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  padding: 24px;
-  background-color: #f4f5f6;
+  background-color: ${({ theme }) => theme.colors.shape};
 
 `;
 
 export const Title = styled.Text`
-  font-size: 18px;
-  font-weight: 400;
-`;
-
-export const AmountProduct = styled.Text`
-  font-size: 14px;
+  font-family: ${({ theme}) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.main};
+  font-size: 32px;
   font-weight: 600;
-`;
-
-export const Main = styled.View`
-  padding: 15px 15px;
-  background-color: #fff;
-  margin-bottom: 15px;
-`;
-
-export const Details = styled.View``;
-
-
-
-export const Price = styled.Text`
-  font-size: 14px;
-  font-weight: 600;
-  color: #03b252;
-`;
-
-
-export const Buttons = styled.View`
-  flex-direction: row;
-  padding: 15px 0;
-  
-`;
-
-
-export const TitleButton = styled.Text`
-  font-size: 18px;
-  font-weight: 400;
-
-  color: #fff;
-`;
-
-
-export const ButtonAdd = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  background-color: #503E9D;
 
 `;
 
 
-export const ButtonRemove = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  margin-left: 5px;
-  background-color: #503E9D;
-`;
 
 export const PriceAll = styled.Text`
+  font-size: 32px;
+  font-family: ${({ theme}) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.title};
+`;
+
+export const Header = styled.View`
+  width: 100%;
+  padding: 83px 37px;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-direction: row;
+
+  background-color: ${({ theme }) => theme.colors.background_secondary};
+
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+
+`;
+
+export const ButtonBack = styled.TouchableOpacity``;
+
+export const ButtonDelete = styled.TouchableOpacity``;
+
+export const Main = styled.View`
+
+`;
+
+export const WrapperPrice = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const LabelPrice = styled.Text`
+  font-family: ${({ theme}) => theme.fonts.regular};
+  color: ${({ theme }) => theme.colors.text};
   font-size: 22px;
-  font-weight: 600;
-  color: #DC1637;
+
+`;
+
+export const LabelDefault = styled.Text`
+  font-family: ${({ theme}) => theme.fonts.bold};
+  color: ${({ theme }) => theme.colors.background_secondary};
+  font-size: 30px;
+
+`;
+
+export const WrapperDefault = styled.View`
+  flex:1;
+  align-items: center;
+  justify-content: center;
 `;

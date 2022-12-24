@@ -5,9 +5,11 @@ export default {
     background_primary: '#F3F3F3',
     background_secondary: '#2DB6A3',
 
-    text: '#464444',
+    text: '#8D8D8D',
     text_datail: '#aeaeb3',
     title: '#454745',
+
+    check: '#03b252',
 
     line: '#ebebf0',
 

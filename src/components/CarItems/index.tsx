@@ -10,7 +10,8 @@ import {
   ButtonAdd,
   TitleButton,
   ButtonRemove,
-
+  ImageItem,
+  WrapperData,
 } from './styles';
 
 import { IProducts } from '../../context'
@@ -25,31 +26,36 @@ export function CarItems({
   data,
   addAmount,
   removeItem
-} : Props) {
-  
+}: Props) {
+
   const [amount, setAmount] = useState(data?.amount);
 
-  function handleMoreAmount(){
+  function handleMoreAmount() {
     setAmount(item => item + 1);
     addAmount();
   }
-  
-  function handleRemoveItem(){
+
+  function handleRemoveItem() {
     removeItem();
-    
-    if(amount === 0){
+
+    if (amount === 0) {
       setAmount(0);
       return
     }
-    
+
     setAmount(item => item - 1);
   }
   return (
     <Container>
       <Details>
-        <Title>{data.name}</Title>
-        <Price>R${data.price}</Price>
-        <AmountProduct>{amount}</AmountProduct>
+        <ImageItem source={{ uri: data.banner }} />
+
+        <WrapperData>
+          <Title>{data.name}</Title>
+          <Price>R${data.price}</Price>
+          <AmountProduct>x{amount}</AmountProduct>
+        </WrapperData>
+
       </Details>
 
       <Buttons>

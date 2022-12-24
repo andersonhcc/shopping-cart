@@ -8,7 +8,7 @@ export const Container = styled.View`
   align-items: center;
   padding: 20px 5px;
   background-color: ${({ theme }) => theme.colors.main};
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 20px;
 
 `;
