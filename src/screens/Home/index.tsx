@@ -67,6 +67,7 @@ export function Home() {
           numColumns={2}
           contentContainerStyle={{
             flexDirection: 'column',
+            paddingBottom: 200,
           }}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (

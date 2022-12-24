@@ -4,7 +4,7 @@ import React, { useContext, createContext, ReactNode, useState } from "react";
 export interface IProducts {
   id: string;
   name: string;
-  price: string;
+  price: number;
   amount?: number;
   priceAll?: number;
   banner: string;

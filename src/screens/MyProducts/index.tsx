@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 
 import { AntDesign, SimpleLineIcons } from '@expo/vector-icons';
@@ -20,6 +20,10 @@ import {
   LabelPrice,
   LabelDefault,
   WrapperDefault,
+  ButtonFinish,
+  TitleButton,
+  Footer,
+  WrapperPriceAll,
 } from './styles';
 
 
@@ -71,10 +75,16 @@ export function MyProducts() {
         ListFooterComponent={() =>
           <WrapperPrice>
             {itemsCar.length !== 0 &&
-              <>
+              <Footer>
+                <WrapperPriceAll>
                 <LabelPrice>Valor total:</LabelPrice>
                 <PriceAll> R${total}</PriceAll>
-              </>
+                </WrapperPriceAll>
+
+                <ButtonFinish>
+                  <TitleButton>Finalizar</TitleButton>
+                </ButtonFinish>
+              </Footer>
             }
           </WrapperPrice>
         }

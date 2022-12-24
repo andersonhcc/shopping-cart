@@ -7,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-family: ${({ theme}) => theme.fonts.bold};
+  font-family: ${({ theme }) => theme.fonts.bold};
   color: ${({ theme }) => theme.colors.main};
   font-size: 32px;
   font-weight: 600;
@@ -18,7 +18,7 @@ export const Title = styled.Text`
 
 export const PriceAll = styled.Text`
   font-size: 32px;
-  font-family: ${({ theme}) => theme.fonts.bold};
+  font-family: ${({ theme }) => theme.fonts.bold};
   color: ${({ theme }) => theme.colors.title};
 `;
 
@@ -41,9 +41,7 @@ export const ButtonBack = styled.TouchableOpacity``;
 
 export const ButtonDelete = styled.TouchableOpacity``;
 
-export const Main = styled.View`
-
-`;
+export const Main = styled.View``;
 
 export const WrapperPrice = styled.View`
   flex-direction: row;
@@ -51,14 +49,14 @@ export const WrapperPrice = styled.View`
 `;
 
 export const LabelPrice = styled.Text`
-  font-family: ${({ theme}) => theme.fonts.regular};
+  font-family: ${({ theme }) => theme.fonts.regular};
   color: ${({ theme }) => theme.colors.text};
   font-size: 22px;
 
 `;
 
 export const LabelDefault = styled.Text`
-  font-family: ${({ theme}) => theme.fonts.bold};
+  font-family: ${({ theme }) => theme.fonts.bold};
   color: ${({ theme }) => theme.colors.background_secondary};
   font-size: 30px;
 
@@ -68,4 +66,33 @@ export const WrapperDefault = styled.View`
   flex:1;
   align-items: center;
   justify-content: center;
+`;
+
+export const Footer = styled.View`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const WrapperPriceAll = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ButtonFinish = styled.TouchableOpacity`
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.background_secondary};
+`;
+
+export const TitleButton = styled.Text`
+  color: ${({ theme }) => theme.colors.background_primary};
+  font-family: ${({ theme }) => theme.fonts.bold};
+  font-size: 17px;
+
 `;

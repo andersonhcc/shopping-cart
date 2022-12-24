@@ -1,8 +1,6 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 
-import { IProducts } from '../../context';
-
 import {
   Container,
   Title,
@@ -13,10 +11,17 @@ import {
   Wrapper,
 } from './styles';
 
+interface Data {
+  name: string;
+  id: string;
+  banner: string;
+  price: number;
+}
+
 
 interface Props {
-  data: IProducts
-  setProductCar: (value: IProducts) => void;
+  data: Data
+  setProductCar: (value: Data) => void;
 }
 
 export function ListProducts({ data, setProductCar }: Props) {

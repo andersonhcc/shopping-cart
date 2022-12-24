@@ -64,6 +64,8 @@ export const ButtonAdd = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background_secondary};
+  margin-left: 5px;
+
 
 `;
 
@@ -74,7 +76,6 @@ export const ButtonRemove = styled.TouchableOpacity`
   border-radius: 50px;
   justify-content: center;
   align-items: center;
-  margin-left: 5px;
   background-color: ${({ theme }) => theme.colors.background_secondary};
 `;
 
@@ -92,5 +93,6 @@ export const ImageItem = styled.Image`
 `;
 
 export const WrapperData = styled.View`
+flex:1
 
 `;

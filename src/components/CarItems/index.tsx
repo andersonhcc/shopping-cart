@@ -59,12 +59,12 @@ export function CarItems({
       </Details>
 
       <Buttons>
-        <ButtonAdd onPress={handleMoreAmount}>
-          <TitleButton>+</TitleButton>
-        </ButtonAdd>
         <ButtonRemove onPress={handleRemoveItem}>
           <TitleButton>-</TitleButton>
         </ButtonRemove>
+        <ButtonAdd onPress={handleMoreAmount}>
+          <TitleButton>+</TitleButton>
+        </ButtonAdd>
       </Buttons>
     </Container>
   );
