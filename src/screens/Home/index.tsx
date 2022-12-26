@@ -37,6 +37,11 @@ export function Home() {
 
   }
 
+  function handleInfoProduct(products: IProducts) {
+    navigation.navigate('InfoProduct', { item: products })
+
+  }
+
   function handleMyProducts() {
     navigation.navigate('MyProducts');
   }
@@ -71,10 +76,11 @@ export function Home() {
           }}
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
-              
+
             <ListProducts
               data={item}
               setProductCar={() => handleAddProducts(item)}
+              viewProductCar={() => handleInfoProduct(item)}
             />
 
 

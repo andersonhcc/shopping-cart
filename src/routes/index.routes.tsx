@@ -8,6 +8,7 @@ import { IProducts } from "../context";
 import { Home } from "../screens/Home";
 import { MyProducts } from "../screens/MyProducts";
 import { Finish } from "../screens/Finish";
+import { InfoProduct } from "../screens/InfoProduct";
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,9 @@ export type StackPramsList = {
     item: IProducts[]
   };
   Finish: undefined;
+  InfoProduct: {
+    item: IProducts
+  }
 };
 
 
@@ -38,9 +42,14 @@ export default function Routes() {
         component={MyProducts}
       />
 
-<Stack.Screen
+      <Stack.Screen
         name="Finish"
         component={Finish}
+      />
+
+      <Stack.Screen
+        name="InfoProduct"
+        component={InfoProduct}
       />
 
     </Stack.Navigator>

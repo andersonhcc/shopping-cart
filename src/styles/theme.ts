@@ -9,6 +9,7 @@ export default {
     text: '#8D8D8D',
     text_datail: '#aeaeb3',
     title: '#454745',
+    text_info: "#3F3D56",
 
     check: '#03b252',
 

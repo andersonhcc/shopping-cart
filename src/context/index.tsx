@@ -8,6 +8,7 @@ export interface IProducts {
   amount?: number;
   priceAll?: number;
   banner: string;
+  description?: string;
 }
 
 interface Props {

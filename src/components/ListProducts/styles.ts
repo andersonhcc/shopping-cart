@@ -19,6 +19,8 @@ export const Banner = styled.Image`
   border-radius: 50px;
 `;
 
+export const ButtonBanner = styled.TouchableOpacity``;
+
 export const Title = styled.Text`
   font-size: 17px;
   font-family: ${({ theme }) => theme.fonts.medium};

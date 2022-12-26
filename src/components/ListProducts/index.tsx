@@ -9,6 +9,7 @@ import {
   ButtonAddCarProduct,
   Banner,
   Wrapper,
+  ButtonBanner,
 } from './styles';
 
 interface Data {
@@ -22,28 +23,35 @@ interface Data {
 interface Props {
   data: Data
   setProductCar: (value: Data) => void;
+  viewProductCar: () => void;
 }
 
-export function ListProducts({ data, setProductCar }: Props) {
+export function ListProducts({
+  data,
+  setProductCar,
+  viewProductCar
+}: Props) {
 
 
   return (
     <Container>
-      <Banner source={{ uri: data.banner }} />
+      <ButtonBanner onPress={viewProductCar}>
+        <Banner source={{ uri: data.banner }} />
+      </ButtonBanner>
       <Wrapper>
 
-      <Details>
-        <Title>{data.name}</Title>
-        <Price>R$ {data.price}</Price>
-      </Details>
+        <Details>
+          <Title>{data.name}</Title>
+          <Price>R$ {data.price}</Price>
+        </Details>
 
-      <ButtonAddCarProduct onPress={() => setProductCar(data)}>
-        <Feather
-          name="plus"
-          size={20}
-          color="white"
-        />
-      </ButtonAddCarProduct>
+        <ButtonAddCarProduct onPress={() => setProductCar(data)}>
+          <Feather
+            name="plus"
+            size={20}
+            color="white"
+          />
+        </ButtonAddCarProduct>
 
       </Wrapper>
 
