@@ -76,7 +76,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <p align="center"> Na tela principal, também é possível adicionar no carrinho </p>
 
-<div style="width: 5; height: 5px, padding: 20px, justify-content: center; margin: 0 auto;">
+<div style="width: 100%;justify-content: center; margin: 0 auto;">
 
 ![Screenshot](prints/3.png)
 
