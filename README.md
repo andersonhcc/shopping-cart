@@ -58,7 +58,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <div style="justify-content: center; margin: 0 auto;">
 
-![Screenshot](prints/8.png)
+![Screenshot](prints/1.png)
 
 </div>
 
@@ -78,7 +78,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <div style="width: 5; height: 5px, padding: 20px, justify-content: center; margin: 0 auto;">
 
-![Screenshot](prints/3.png 50x50)
+![Screenshot](prints/3.png)
 
 </div>
 
