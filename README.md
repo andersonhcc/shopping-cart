@@ -64,7 +64,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <p align="center"> Ao clicar no produto, é possível ver a visualização de suas informaçẽos e adicionar no carrinho também. </p>
 
-<div style="width: 120px; height: 20px, padding: 20px, justify-content: center; margin: 0 auto;">
+<div style="width: 120px; height: 20px, padding: 20px">
 
 ![Screenshot](prints/2.png)
 
