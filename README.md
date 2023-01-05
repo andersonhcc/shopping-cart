@@ -58,7 +58,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <div style="justify-content: center; margin: 0 auto;">
 
-<img src="prints/1.png" width={20} height={10}/>
+![Screenshot](prints/8.png)
 
 </div>
 
