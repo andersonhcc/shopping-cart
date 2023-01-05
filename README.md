@@ -56,9 +56,9 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <p align="center"> A página de Produtos do projeto! Inicia com os produtos de sua empresa disponível para comercialização </p>
 
-<div style="width: 150px; height: 40px, padding: 20px, justify-content: center; margin: 0 auto;">
+<div style="justify-content: center; margin: 0 auto;">
 
-![Screenshot](prints/1.png)
+<img src="prints/1.png" width={120} height={40}/>
 
 </div>
 
