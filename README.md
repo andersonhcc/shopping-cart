@@ -1,4 +1,4 @@
-<h1 align="center"> 🔵 { Shopping cart } 🔵 </h1>
+<h1 align="center"> 🛒{ Shopping cart } 🛒 </h1>
 <p align="center">Aplicativo mobile para empresas que utilizam carrinho de compras.</p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 
 
 <h4 align="center"> 
-	🚧 Aguardando atualizações 👨🏻‍🔧 🚧
+  Finalizado
 </h4>
 
 
@@ -76,7 +76,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 <p align="center"> Na tela principal, também é possível adicionar no carrinho </p>
 
-<div style="width: 100%;justify-content: center; margin: 0 auto;">
+<div style="width: 100%; justify-content: center; margin: 0 auto;">
 
 ![Screenshot](prints/3.png)
 

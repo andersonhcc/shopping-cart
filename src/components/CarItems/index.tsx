@@ -14,13 +14,7 @@ import {
   WrapperData,
 } from './styles';
 
-import { IProducts } from '../../context'
-
-interface Props {
-  data: IProducts
-  addAmount: () => void;
-  removeItem: () => void;
-}
+import { Props } from './types';
 
 export function CarItems({
   data,

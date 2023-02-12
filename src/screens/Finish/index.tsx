@@ -1,5 +1,4 @@
 import React from 'react';
-import { Animated } from 'react-native';
 
 import Done from '../../assets/images/Done.svg';
 import { Button } from '../../components/Button';
@@ -8,7 +7,6 @@ import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { StackPramsList } from '../../routes/index.routes';
-
 
 import {
   Container,

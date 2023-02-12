@@ -12,19 +12,7 @@ import {
   ButtonBanner,
 } from './styles';
 
-interface Data {
-  name: string;
-  id: string;
-  banner: string;
-  price: number;
-}
-
-
-interface Props {
-  data: Data
-  setProductCar: (value: Data) => void;
-  viewProductCar: () => void;
-}
+import { Props } from './types';
 
 export function ListProducts({
   data,

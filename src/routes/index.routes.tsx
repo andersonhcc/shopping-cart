@@ -1,33 +1,16 @@
 import React from "react";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { useTheme } from "styled-components";
-
-import { IProducts } from "../context";
+import { StackPramsList } from "./types";
 
 import { Home } from "../screens/Home";
 import { MyProducts } from "../screens/MyProducts";
 import { Finish } from "../screens/Finish";
 import { InfoProduct } from "../screens/InfoProduct";
 
-
-const Stack = createNativeStackNavigator();
-
-
-export type StackPramsList = {
-  Home: undefined;
-  MyProducts: {
-    item: IProducts[]
-  };
-  Finish: undefined;
-  InfoProduct: {
-    item: IProducts
-  }
-};
-
+const Stack = createNativeStackNavigator<StackPramsList>();
 
 export default function Routes() {
-  const theme = useTheme();
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>

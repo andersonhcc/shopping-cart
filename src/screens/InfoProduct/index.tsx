@@ -5,7 +5,6 @@ import { useTheme } from 'styled-components';
 import { useProducts } from '../../context';
 
 import { IProducts } from '../../context';
-
 import { Button } from '../../components/Button';
 
 import {

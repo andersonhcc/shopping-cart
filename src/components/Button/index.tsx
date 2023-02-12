@@ -1,18 +1,7 @@
 import React from 'react';
 
-import { TouchableOpacityProps } from 'react-native';
-
 import { Container, TextButtonAcess, Indicator } from './styles';
-
-interface PropsButton extends TouchableOpacityProps{
-  marginTop?: number;
-  backgroundColor?: string;
-  title: string;
-  disabled?: boolean;
-  isLoading?: boolean;
-  width?: number;
-  height?: number;
-}
+import { Props } from './types';
 
 export function Button({
   marginTop, 
@@ -22,8 +11,8 @@ export function Button({
   backgroundColor, 
   isLoading,
   disabled,
-  ...props} 
-: PropsButton){
+  ...rest} 
+: Props){
   return (
     <Container
       marginTop={marginTop}
@@ -32,7 +21,7 @@ export function Button({
       backgroundColor={backgroundColor}
       width={width}
       height={height}
-      {...props}
+      {...rest}
     >
       {
       isLoading ? 
@@ -40,8 +29,6 @@ export function Button({
         : 
         <TextButtonAcess>{title}</TextButtonAcess>
      }
-
-      
 
     </Container>
   );

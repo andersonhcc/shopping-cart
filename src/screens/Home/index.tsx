@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
@@ -9,12 +9,10 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { useProducts } from '../../context';
 
-
 import { products } from '../../utils/products';
 import { ListProducts } from '../../components/ListProducts';
 
 import { IProducts } from '../../context';
-
 
 import {
   Container,

@@ -2,7 +2,6 @@ import React from 'react';
 import { FlatList, Alert } from 'react-native';
 
 import { AntDesign, SimpleLineIcons } from '@expo/vector-icons';
-
 import { useProducts } from '../../context';
 import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
@@ -27,9 +26,7 @@ import {
   WrapperPriceAll,
 } from './styles';
 
-
 export function MyProducts() {
-
   const {
     itemsCar,
     addItemCar,
@@ -136,9 +133,6 @@ export function MyProducts() {
           </WrapperDefault>
         }
       />
-
-
-
 
     </Container>
   );
