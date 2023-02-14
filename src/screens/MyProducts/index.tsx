@@ -6,7 +6,7 @@ import { useProducts } from '../../context';
 import { useTheme } from 'styled-components';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { StackPramsList } from '../../routes/index.routes';
+import { StackPramsList } from '../../routes/types';
 
 import { CarItems } from '../../components/CarItems';
 import { Button } from '../../components/Button';

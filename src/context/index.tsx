@@ -1,31 +1,9 @@
-import React, { useContext, createContext, ReactNode, useState } from "react";
+import React, { useContext, createContext, useState } from "react";
 
-
-export interface IProducts {
-  id: string;
-  name: string;
-  price: number;
-  amount?: number;
-  priceAll?: number;
-  banner: string;
-  description?: string;
-}
-
-interface Props {
-  itemsCar: IProducts[];
-  addItemCar: (value: IProducts) => void;
-  removeItem: (value: IProducts) => void;
-  total: number;
-  resetCar: () => void;
-
-}
-
-interface IContextProvider {
-  children: ReactNode
-}
+import { IContextProvider, Props } from "./types";
+import { IProducts } from "../models/IProduct";
 
 export const ContextAll = createContext({} as Props);
-
 
  function Context({ children }: IContextProvider) {
   const [itemsCar, setItemsCar] = useState<IProducts[]>([]);

@@ -4,7 +4,6 @@ import { Feather } from '@expo/vector-icons';
 
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components';
-import { StackPramsList } from '../../routes/index.routes';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { useProducts } from '../../context';
@@ -12,7 +11,8 @@ import { useProducts } from '../../context';
 import { products } from '../../utils/products';
 import { ListProducts } from '../../components/ListProducts';
 
-import { IProducts } from '../../context';
+import { StackPramsList } from '../../routes/types';
+import { IProducts } from '../../models/IProduct';
 
 import {
   Container,

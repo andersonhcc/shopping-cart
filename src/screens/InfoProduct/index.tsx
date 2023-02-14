@@ -4,7 +4,7 @@ import { useRoute, useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components';
 import { useProducts } from '../../context';
 
-import { IProducts } from '../../context';
+import { IProducts } from '../../models/IProduct';
 import { Button } from '../../components/Button';
 
 import {
