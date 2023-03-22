@@ -14,13 +14,10 @@ export const Container = styled.TouchableOpacity<Props>`
   
   ${({backgroundColor, theme}) => backgroundColor ? css`background-color: ${backgroundColor};` : css`${theme.colors.text};`};
   
-  ${({ width}) => width ? css`width: ${width}px` : css`width: 300px`};
+  ${({ width}) => width ? css`width: ${width}px;` : css`width: 300px;`};
 
-  ${({ height }) => height ? css`height: ${height}px` : css`height: 50px`};
+  ${({ height }) => height ? css`height: ${height}px;` : css`height: 50px;`};
 
-/* 
-  width: ${RFValue(300)}px;
-  height: ${RFValue(50)}px;  */
   opacity: ${({ disabled }) => disabled ? 0.5 : 1};
   border-radius: 7px;
   align-items: center;

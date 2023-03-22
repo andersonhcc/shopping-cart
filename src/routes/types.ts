@@ -1,4 +1,4 @@
-import { IProducts } from "../context";
+import { IProducts } from "../models/IProduct";
 
 
 export type StackPramsList = {
