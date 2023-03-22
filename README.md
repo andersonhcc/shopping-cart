@@ -46,8 +46,7 @@ Aplicativo desenvolvido com a finalidade de empresas conseguirem suas metas atra
 
 ### Link vídeo:
 
-
-https://user-images.githubusercontent.com/103274266/226779443-067e8ca4-4ce0-4f84-8c98-a93ba7c6d7cb.mp4
+https://user-images.githubusercontent.com/103274266/226780235-8253e153-93da-4eba-8b80-33b00ea2a9a4.mp4
 
 
 
